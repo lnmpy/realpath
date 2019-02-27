@@ -1,0 +1,19 @@
+language: go
+go: 1.10.3
+dist: trusty
+
+before_install:
+  - go get -v github.com/aktau/github-release
+  - go get -v github.com/golang/dep/cmd/dep
+
+install: make install
+
+script:
+  - make build
+
+after_success:
+  - if [[ "$TRAVIS_TAG" != "" ]]; then make release; fi
+
+notifications:
+  email: false
+  slack: lnmpy:LSbevEhQZLylhk2zozsnR286
