@@ -3,11 +3,8 @@ REPO = realpath
 TAG = `git describe --tags`
 
 
-install:
-	@echo
-
 build: clean
-	go build -o realpath
+	GO111MODULE=on go build -o realpath
 
 tag: build
 	git tag ${TAG}
