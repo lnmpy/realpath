@@ -1,4 +1,4 @@
-# http-server
+# realpath
 
 A realpath written in golang, mostly for macOS.
 

@@ -13,7 +13,7 @@ func main() {
 
 	path, err := filepath.Abs(os.Args[1])
 	if err != nil {
-		os.Exit(1)
+		os.Exit(2)
 	}
 	fmt.Println(path)
 }
