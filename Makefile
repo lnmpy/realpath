@@ -12,6 +12,7 @@ release: clean
 	GOOS=windows GOARCH=amd64 go build -o realpath.exe  && tar -czf realpath_windows.tar.gz realpath.exe
 	-github-release delete -u ${OWNER} -r ${REPO} -t ${TAG}
 	github-release release -u ${OWNER} -r ${REPO} -t ${TAG} -n ${TAG}
+	-sleep 20
 	github-release upload  -u ${OWNER} -r ${REPO} -t ${TAG} -n "realpath_darwin.tar.gz" -f realpath_darwin.tar.gz
 	github-release upload  -u ${OWNER} -r ${REPO} -t ${TAG} -n "realpath_linux.tar.gz" -f realpath_linux.tar.gz
 	github-release upload  -u ${OWNER} -r ${REPO} -t ${TAG} -n "realpath_windows.tar.gz" -f realpath_windows.tar.gz
